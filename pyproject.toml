@@ -1,0 +1,28 @@
+[project]
+name = "freds-oral-prep-utils"
+requires-python = ">=3.13"
+dependencies = [
+    "click",
+    "anki",
+    "pdfplumber",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.test.dependencies]
+tox = "*"
+tox-current-env = "*"
+black = "*"
+ruff = "*"
+bandit = "*"
+
+[tool.ruff]
+line-length = 120
+
+[tool.black]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
