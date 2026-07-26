@@ -1,0 +1,38 @@
+[project]
+name = "freds-oral-prep-utils"
+requires-python = ">=3.13"
+dependencies = [
+    "click",
+    "anki",
+    "pdfplumber",
+    "bs4",
+    "requests",
+    "wikitextparser",
+    "anki-drag-and-drop @ git+https://github.com/DamianZaremba/anki-drag-and-drop.git",
+    "anki-multiple-choice @ git+https://github.com/DamianZaremba/anki-multiple-choice.git",
+    "anki-ordering @ git+https://github.com/DamianZaremba/anki-ordering.git",
+    "anki-dynamic-image @ git+https://github.com/DamianZaremba/anki-dynamic-image.git",
+]
+
+[project.scripts]
+fred-oral-prep = "cli:cli"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.test.dependencies]
+tox = "*"
+tox-current-env = "*"
+black = "*"
+ruff = "*"
+bandit = "*"
+
+[tool.ruff]
+line-length = 120
+
+[tool.black]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
